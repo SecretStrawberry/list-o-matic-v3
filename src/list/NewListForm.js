@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { connect } from "react-redux";
 import { createList } from "./actions";
 
+import { BsCheckLg } from "react-icons/bs";
+
 import "./NewListForm.scss";
 
 const NewListForm = ({ lists, onCreatePressed }) => {
@@ -16,7 +18,7 @@ const NewListForm = ({ lists, onCreatePressed }) => {
         value={inputValue}
         onChange={(e) => setInputValue(e.target.value)}
       />
-      <button
+      <div
         onClick={() => {
           // check if listName exists in state list object
           const isDuplicate = lists.some(
@@ -30,8 +32,8 @@ const NewListForm = ({ lists, onCreatePressed }) => {
         }}
         className="new-list-button"
       >
-        Create List
-      </button>
+        <BsCheckLg />
+      </div>
     </div>
   );
 };

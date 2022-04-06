@@ -11,14 +11,15 @@ import ProductsIndex from "../products/ProductsIndex";
 import "./ListsIndex.scss";
 
 const ListIndex = ({ lists = [], onDeletePressed }) => {
-  console.log(lists);
   return (
     <div className="list-wrapper">
+      <h1>List-o-Matic</h1>
       <NewListForm />
 
       {lists.map((list) => (
         <>
           <ListIndexItem list={list} onDeletePressed={onDeletePressed} />
+
           <ProductsIndex products={list} />
         </>
       ))}

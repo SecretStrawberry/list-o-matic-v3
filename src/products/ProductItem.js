@@ -2,6 +2,8 @@ import React from "react";
 
 import "./ProductItem.scss";
 
+import { AiFillCloseSquare } from "react-icons/ai";
+
 const ProductItem = ({ product, onDeleteProductPressed, onCheckedPressed }) => {
   console.log(product);
   return (
@@ -11,9 +13,12 @@ const ProductItem = ({ product, onDeleteProductPressed, onCheckedPressed }) => {
         type="checkbox"
       />
       <h3>{product.item}</h3>
-      <button onClick={() => onDeleteProductPressed(product.itemId)}>
-        Delete
-      </button>
+      <div
+        className="delete-btn"
+        onClick={() => onDeleteProductPressed(product.itemId)}
+      >
+        <AiFillCloseSquare />
+      </div>
     </div>
   );
 };

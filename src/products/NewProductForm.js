@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { connect } from "react-redux";
 import { addProduct } from "../list/actions";
 
+import { BsCheckLg } from "react-icons/bs";
+
 import "./NewProductForm.scss";
 
 const NewProductForm = ({ products, onCreateProductPressed }) => {
@@ -10,12 +12,14 @@ const NewProductForm = ({ products, onCreateProductPressed }) => {
   return (
     <div className="new-product-form">
       <input
+        className="product-form-input"
         type="text"
         placeholder="Add Product"
         value={inputValue}
         onChange={(e) => setInputValue(e.target.value)}
       />
-      <button
+      <div
+        className="add-product-btn"
         onClick={() => {
           const id = products.id;
           /// Check for products duplicates
@@ -28,8 +32,8 @@ const NewProductForm = ({ products, onCreateProductPressed }) => {
           }
         }}
       >
-        Add product
-      </button>
+        <BsCheckLg />
+      </div>
     </div>
   );
 };

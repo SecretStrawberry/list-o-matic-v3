@@ -1,7 +1,16 @@
+@import "../utils/colors.scss";
+@import url("https://fonts.googleapis.com/css2?family=Istok+Web:wght@400;700&display=swap");
+
 .products-index {
   min-height: 50vh;
   width: 90%;
   margin: 0 auto;
+  color: $white;
+
+  & > h3 {
+    text-transform: capitalize;
+    font-family: "Istok Web", sans-serif;
+  }
 
   border: 1px solid green;
   padding: 1rem 2rem;
