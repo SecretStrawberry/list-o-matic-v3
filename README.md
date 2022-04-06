@@ -1,3 +1,13 @@
+## List-o-Matic
+Is a app that makes any kind of lists.
+You can create lists, adding products to them. 
+You can delete any list with all the products in it.
+You can delete any product in a list or check it as completed.
+
+Is still in development, new features are comming, and new UI/UX design.
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
