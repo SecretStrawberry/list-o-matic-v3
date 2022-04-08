@@ -27,9 +27,3 @@ export const checkProduct = (itemId) => ({
   type: CHECK_PRODUCT,
   payload: { itemId },
 });
-
-export const CHECK_ID = "CHECK_ID";
-export const checkId = (listId, isVisible) => ({
-  type: CHECK_ID,
-  payload: { listId, isVisible },
-});

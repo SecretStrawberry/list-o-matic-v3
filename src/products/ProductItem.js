@@ -5,7 +5,6 @@ import "./ProductItem.scss";
 import { RiCloseCircleLine } from "react-icons/ri";
 
 const ProductItem = ({ product, onDeleteProductPressed, onCheckedPressed }) => {
-  console.log(product);
   return (
     <div className="product-item-container">
       <input

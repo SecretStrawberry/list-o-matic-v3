@@ -6,7 +6,6 @@ import {
   ADD_PRODUCT,
   DELETE_PRODUCT,
   CHECK_PRODUCT,
-  CHECK_ID,
 } from "./actions";
 
 // initialState = [{
