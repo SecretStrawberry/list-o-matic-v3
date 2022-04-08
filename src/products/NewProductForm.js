@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { connect } from "react-redux";
 import { addProduct } from "../list/actions";
 
-import { BsCheckLg } from "react-icons/bs";
+import { MdCheck } from "react-icons/md";
 
 import "./NewProductForm.scss";
 
@@ -22,17 +22,19 @@ const NewProductForm = ({ products, onCreateProductPressed }) => {
         className="add-product-btn"
         onClick={() => {
           const id = products.id;
+
           /// Check for products duplicates
           const isDuplicate = products.products.some(
             (item) => item.item === inputValue
           );
+
           if (!isDuplicate) {
             onCreateProductPressed(inputValue, id);
             setInputValue("");
           }
         }}
       >
-        <BsCheckLg />
+        <MdCheck />
       </div>
     </div>
   );

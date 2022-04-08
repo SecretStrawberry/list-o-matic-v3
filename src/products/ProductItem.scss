@@ -6,16 +6,23 @@
   justify-content: space-between;
   align-items: center;
 
-  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+  box-shadow: 1px 1px 4px rgba($green, 1);
 
   padding: 1rem 2rem;
 
-  margin-bottom: 2rem; //TODO: replace later
+  animation: moveFromLeft;
+  animation-duration: 0.3s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in;
 
   & > h3 {
     font-size: 1.6rem;
     text-transform: capitalize;
     font-family: "Lato", sans-serif;
+  }
+
+  &:not(:last-of-type) {
+    margin-bottom: 2rem;
   }
 }
 
@@ -27,8 +34,21 @@
   width: 4rem;
   height: 4rem;
 
+  border-radius: 50px;
+
   font-size: 3rem;
   color: $pink;
 
   box-shadow: 0 0 4px $pink;
+}
+
+@keyframes moveFromLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-5rem);
+  }
+  100% {
+    opacity: 100%;
+    transform: translateX(0);
+  }
 }

@@ -8,14 +8,14 @@ import ProductItem from "./ProductItem";
 import "./ProductsIndex.scss";
 
 const ProductsIndex = ({
-  products = [],
+  products,
   onDeleteProductPressed,
   onCheckedPressed,
 }) => {
   return (
     <div className="products-index">
-      <h3>{products.listName}</h3>
       <NewProductForm products={products} />
+
       {products.products.map((item) => (
         <ProductItem
           product={item}

@@ -6,7 +6,18 @@ import {
   ADD_PRODUCT,
   DELETE_PRODUCT,
   CHECK_PRODUCT,
+  CHECK_ID,
 } from "./actions";
+
+// initialState = [{
+//  listName: listName,
+//  products: [{
+//              item: itemName,
+//              itemid: "",
+//              isChecked: false
+//            },],
+// id: "",
+// }]
 
 // function to create the id`s of lists objects and item objects
 function randomId() {
@@ -116,3 +127,5 @@ export const lists = (state = [], action) => {
       return state;
   }
 };
+
+////////////////////////////////////////// MOdal ////////////////////////////////////////

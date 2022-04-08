@@ -2,6 +2,17 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Istok+Web:wght@400;700&display=swap");
 
+.container:not(:last-of-type) {
+  margin-bottom: 2rem;
+}
+
+.container {
+  animation: moveFromTopLeft;
+  animation-duration: 0.2s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in;
+}
+
 .list-item-container {
   display: flex;
   justify-content: space-between;
@@ -17,8 +28,6 @@
   padding: 1rem 2rem;
 
   border-radius: 5px;
-
-  margin-bottom: 2rem; //TODO: change this later is just provizory
 }
 
 .delete-container {
@@ -27,10 +36,21 @@
   align-items: center;
   width: 4rem;
   height: 4rem;
+
+  font-size: 3rem;
+  color: $pink;
+
   box-shadow: 0 0 4px $pink;
 }
 
-.delete-button {
-  font-size: 3rem;
-  color: $pink;
+@keyframes moveFromTopLeft {
+  0% {
+    opacity: 0;
+    transform: translateY(-2rem) translateX(-5rem);
+  }
+
+  100% {
+    opacity: 100%;
+    transform: translateY(0), translateX(0);
+  }
 }

@@ -6,11 +6,9 @@ import { deleteList } from "./actions";
 import NewListForm from "./NewListForm";
 import ListIndexItem from "./ListIndexItem";
 
-import ProductsIndex from "../products/ProductsIndex";
-
 import "./ListsIndex.scss";
 
-const ListIndex = ({ lists = [], onDeletePressed }) => {
+const ListIndex = ({ lists = [], onDeletePressed, onShowPressed }) => {
   return (
     <div className="list-wrapper">
       <h1>List-o-Matic</h1>
@@ -18,9 +16,11 @@ const ListIndex = ({ lists = [], onDeletePressed }) => {
 
       {lists.map((list) => (
         <>
-          <ListIndexItem list={list} onDeletePressed={onDeletePressed} />
-
-          <ProductsIndex products={list} />
+          <ListIndexItem
+            list={list}
+            onDeletePressed={onDeletePressed}
+            onShowPressed={onShowPressed}
+          />
         </>
       ))}
     </div>

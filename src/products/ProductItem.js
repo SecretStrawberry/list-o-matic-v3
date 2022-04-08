@@ -2,7 +2,7 @@ import React from "react";
 
 import "./ProductItem.scss";
 
-import { AiFillCloseSquare } from "react-icons/ai";
+import { RiCloseCircleLine } from "react-icons/ri";
 
 const ProductItem = ({ product, onDeleteProductPressed, onCheckedPressed }) => {
   console.log(product);
@@ -17,7 +17,7 @@ const ProductItem = ({ product, onDeleteProductPressed, onCheckedPressed }) => {
         className="delete-btn"
         onClick={() => onDeleteProductPressed(product.itemId)}
       >
-        <AiFillCloseSquare />
+        <RiCloseCircleLine />
       </div>
     </div>
   );

@@ -2,16 +2,34 @@
 @import url("https://fonts.googleapis.com/css2?family=Istok+Web:wght@400;700&display=swap");
 
 .products-index {
-  min-height: 50vh;
   width: 90%;
+  min-height: 50vh;
   margin: 0 auto;
   color: $white;
+
+  margin-top: 2rem;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+
+  animation: moveFromTop;
+  animation-duration: 0.3s;
+  animation-fill-mode: forwards;
 
   & > h3 {
     text-transform: capitalize;
     font-family: "Istok Web", sans-serif;
   }
 
-  border: 1px solid green;
   padding: 1rem 2rem;
+}
+
+@keyframes moveFromTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-4rem);
+  }
+
+  100% {
+    opacity: 100%;
+    transform: translateY(0);
+  }
 }
