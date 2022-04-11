@@ -9,7 +9,6 @@ export const ProductItem = ({
   onDeleteProductPressed,
   onCheckedPressed,
 }) => {
-  console.log(product);
   return (
     <>
       {product.isChecked === false ? (
