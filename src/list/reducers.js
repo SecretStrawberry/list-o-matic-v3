@@ -15,11 +15,6 @@ import {
 //              itemid: "",
 //              isChecked: false
 //            }],
-// checkedProducts: [{
-//                    item: itemName,
-//                    itemid: "",
-//                    isChecked: true
-//                  }],
 // id: "",
 // }]
 
@@ -33,12 +28,11 @@ export const lists = (state = [], action) => {
 
   switch (type) {
     case CREATE_LIST: {
-      const { listName = "", products = [], checkedProducts = [] } = payload;
+      const { listName = "", products = [] } = payload;
 
       const newList = {
         listName,
         products,
-        checkedProducts,
         id: randomId(),
       };
       // cloning the state
@@ -76,8 +70,6 @@ export const lists = (state = [], action) => {
             listName: things.listName,
             // concatenating the new item object to products array
             products: things.products.concat(newItem),
-            // leaving checkedProducts unchanged
-            checkedProducts: things.checkedProducts,
             // leaving the id unchanged
             id: things.id,
           };
@@ -98,7 +90,6 @@ export const lists = (state = [], action) => {
             // we filter through the products array and we return the array of item objects
             // without the item object that has the itemId that is comming from paylaod
             products: things.products.filter((item) => item.itemId !== itemId),
-            checkedProducts: things.checkedProducts,
             id: things.id,
           };
         }
@@ -125,7 +116,6 @@ export const lists = (state = [], action) => {
               return item;
             }),
             id: things.id,
-            checkedProducts: things.checkedProducts,
           };
         }
         return things;
@@ -136,5 +126,3 @@ export const lists = (state = [], action) => {
       return state;
   }
 };
-
-////////////////////////////////////////// MOdal ////////////////////////////////////////
