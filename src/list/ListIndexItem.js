@@ -7,6 +7,7 @@ import { AiFillCloseSquare } from "react-icons/ai";
 
 const ListIndexItem = ({ list, onDeletePressed }) => {
   const [isVisible, setIsVisible] = useState(false);
+  // console.log(list);
   return (
     <div className="container">
       <div

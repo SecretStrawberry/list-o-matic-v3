@@ -4,22 +4,62 @@ import "./ProductItem.scss";
 
 import { RiCloseCircleLine } from "react-icons/ri";
 
-const ProductItem = ({ product, onDeleteProductPressed, onCheckedPressed }) => {
+export const ProductItem = ({
+  product,
+  onDeleteProductPressed,
+  onCheckedPressed,
+}) => {
+  console.log(product);
   return (
-    <div className="product-item-container">
-      <input
-        onChange={() => onCheckedPressed(product.itemId)}
-        type="checkbox"
-      />
-      <h3>{product.item}</h3>
-      <div
-        className="delete-btn"
-        onClick={() => onDeleteProductPressed(product.itemId)}
-      >
-        <RiCloseCircleLine />
-      </div>
-    </div>
+    <>
+      {product.isChecked === false ? (
+        <div className="product-item-container">
+          <input
+            className="product-checkbox"
+            onChange={() => onCheckedPressed(product.itemId)}
+            type="checkbox"
+          />
+          <h3>{product.item}</h3>
+          <div
+            className="delete-btn"
+            onClick={() => onDeleteProductPressed(product.itemId)}
+          >
+            <RiCloseCircleLine />
+          </div>
+        </div>
+      ) : (
+        ""
+      )}
+    </>
   );
 };
 
-export default ProductItem;
+export const ProductItemChecked = ({
+  product,
+  onDeleteProductPressed,
+  onCheckedPressed,
+}) => {
+  return (
+    <>
+      {product.isChecked === true ? (
+        <div className="product-item-container">
+          <input
+            className="product-checkbox"
+            onChange={() => onCheckedPressed(product.itemId)}
+            type="checkbox"
+            checked
+          />
+          <h3>{product.item}</h3>
+          <div
+            className="delete-btn"
+            onClick={() => onDeleteProductPressed(product.itemId)}
+          >
+            <RiCloseCircleLine />
+          </div>
+        </div>
+      ) : (
+        ""
+      )}
+    </>
+  );
+};

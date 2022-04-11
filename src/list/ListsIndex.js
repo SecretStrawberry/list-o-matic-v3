@@ -9,6 +9,7 @@ import ListIndexItem from "./ListIndexItem";
 import "./ListsIndex.scss";
 
 const ListIndex = ({ lists = [], onDeletePressed, onShowPressed }) => {
+  // console.log(lists);
   return (
     <div className="list-wrapper">
       <h1>List-o-Matic</h1>

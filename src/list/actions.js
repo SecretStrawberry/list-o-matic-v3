@@ -1,7 +1,7 @@
 export const CREATE_LIST = "CREATE_LIST";
-export const createList = (listName, products) => ({
+export const createList = (listName, products, checkedProducts) => ({
   type: CREATE_LIST,
-  payload: { listName, products },
+  payload: { listName, products, checkedProducts },
 });
 
 export const DELETE_LIST = "DELETE_LIST";

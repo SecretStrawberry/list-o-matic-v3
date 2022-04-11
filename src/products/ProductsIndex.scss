@@ -3,7 +3,7 @@
 
 .products-index {
   width: 90%;
-  min-height: 50vh;
+  min-height: 30vh;
   margin: 0 auto;
   color: $white;
 
@@ -20,6 +20,20 @@
   }
 
   padding: 1rem 2rem;
+}
+
+.products {
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+
+.products-checked {
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+  background-color: $greyDark;
+  color: $greyBlue;
+
+  padding-right: 1rem;
+  padding-left: 1rem;
 }
 
 @keyframes moveFromTop {

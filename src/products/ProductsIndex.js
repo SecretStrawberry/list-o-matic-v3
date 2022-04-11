@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 
 import { deleteProduct, checkProduct } from "../list/actions";
 import NewProductForm from "./NewProductForm";
-import ProductItem from "./ProductItem";
+import { ProductItem, ProductItemChecked } from "./ProductItem";
 
 import "./ProductsIndex.scss";
 
@@ -14,15 +14,27 @@ const ProductsIndex = ({
 }) => {
   return (
     <div className="products-index">
-      <NewProductForm products={products} />
-
-      {products.products.map((item) => (
-        <ProductItem
-          product={item}
-          onDeleteProductPressed={onDeleteProductPressed}
-          onCheckedPressed={onCheckedPressed}
-        />
-      ))}
+      <div className="products">
+        <NewProductForm products={products} />
+        {products.products.map((item) => (
+          <>
+            <ProductItem
+              product={item}
+              onDeleteProductPressed={onDeleteProductPressed}
+              onCheckedPressed={onCheckedPressed}
+            />
+          </>
+        ))}
+      </div>
+      <div className="products-checked">
+        {products.products.map((item) => (
+          <ProductItemChecked
+            product={item}
+            onDeleteProductPressed={onDeleteProductPressed}
+            onCheckedPressed={onCheckedPressed}
+          />
+        ))}
+      </div>
     </div>
   );
 };
