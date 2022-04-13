@@ -15,14 +15,14 @@ const appear = keyframes`
 }
 `;
 
-const disappear = keyframes`
-0% {
-    transform: scale(1);
-   }
-100% {
-       transform: scale(0);
-}
-`;
+// const disappear = keyframes`
+// 0% {
+//     transform: scale(1);
+//    }
+// 100% {
+//        transform: scale(0);
+// }
+// `;
 
 const About = styled.div`
   @import url("https://fonts.googleapis.com/css2?family=Istok+Web:wght@400;700&display=swap");
