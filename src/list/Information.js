@@ -15,15 +15,6 @@ const appear = keyframes`
 }
 `;
 
-// const disappear = keyframes`
-// 0% {
-//     transform: scale(1);
-//    }
-// 100% {
-//        transform: scale(0);
-// }
-// `;
-
 const About = styled.div`
   @import url("https://fonts.googleapis.com/css2?family=Istok+Web:wght@400;700&display=swap");
   position: absolute;
@@ -44,11 +35,6 @@ const About = styled.div`
   animation: ${appear};
   animation-duration: 0.2s;
   animation-fill-mode: forwards;
-  /* &:active {
-    animation: ${disappear};
-    animation-duration: 0.2s;
-    animation-play-state: running;
-  } */
 
   z-index: 3;
 `;
