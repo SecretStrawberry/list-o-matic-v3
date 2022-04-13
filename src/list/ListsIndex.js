@@ -1,30 +1,46 @@
 import React from "react";
 import { connect } from "react-redux";
 
+import styled from "styled-components";
+
 import { deleteList } from "./actions";
 
 import NewListForm from "./NewListForm";
 import ListIndexItem from "./ListIndexItem";
+import { Information } from "./Information";
 
 import "./ListsIndex.scss";
 
-const ListIndex = ({ lists = [], onDeletePressed, onShowPressed }) => {
-  // console.log(lists);
-  return (
-    <div className="list-wrapper">
-      <h1>List-o-Matic</h1>
-      <NewListForm />
+const Info = styled.div`
+  /* position: relative; */
+  align-self: flex-end;
+  margin-right: 2rem;
+  margin-top: 2rem;
 
-      {lists.map((list) => (
-        <>
-          <ListIndexItem
-            list={list}
-            onDeletePressed={onDeletePressed}
-            onShowPressed={onShowPressed}
-          />
-        </>
-      ))}
-    </div>
+  font-size: 2rem;
+`;
+
+const ListIndex = ({ lists = [], onDeletePressed, onShowPressed }) => {
+  return (
+    <>
+      <div className="list-wrapper">
+        <Info>
+          <Information />
+        </Info>
+        <h1>List-o-Matic</h1>
+        <NewListForm />
+
+        {lists.map((list) => (
+          <>
+            <ListIndexItem
+              list={list}
+              onDeletePressed={onDeletePressed}
+              onShowPressed={onShowPressed}
+            />
+          </>
+        ))}
+      </div>
+    </>
   );
 };
 

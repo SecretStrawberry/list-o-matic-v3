@@ -10,11 +10,14 @@
 
   color: $white;
 
+  overflow: hidden;
+
   & > h1 {
     width: 90%;
     text-align: center;
     font-family: "Special Elite", cursive;
     margin-bottom: 5rem;
+    margin-top: 1rem;
   }
 
   background-image: linear-gradient(to right, $greyBlue, $greyGreenDark);
