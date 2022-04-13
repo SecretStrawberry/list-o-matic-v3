@@ -28,7 +28,7 @@ const NewProductForm = ({ products, onCreateProductPressed }) => {
             (item) => item.item === inputValue
           );
 
-          if (!isDuplicate) {
+          if (!isDuplicate && inputValue !== "") {
             onCreateProductPressed(inputValue, id);
             setInputValue("");
           }

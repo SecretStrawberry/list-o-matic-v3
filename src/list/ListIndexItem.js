@@ -17,16 +17,18 @@ const ListItemsSummary = styled.div`
 const ListItemsLifeBar = styled.div`
   position: relative;
   width: 80%;
-  height: 1rem;
-  background-color: #4d96ff;
+  height: 1.4rem;
+  background-color: #f4d03f;
   &::after {
     position: absolute;
     content: "";
-    top: 0;
+    top: 0.2rem;
     left: 0;
-    width: 90%;
+    width: ${(props) => (props.noic * 100) / props.noi}%;
     height: 1rem;
-    background-color: #f4d03f;
+    background-color: #4d96ff;
+    transition: all 0.2s;
+    box-shadow: 0 0 5px rgb(0, 0, 0);
   }
 `;
 
@@ -54,7 +56,10 @@ const ListIndexItem = ({ list, onDeletePressed }) => {
           </div>
         </div>
         <ListItemsSummary>
-          <ListItemsLifeBar></ListItemsLifeBar>
+          <ListItemsLifeBar
+            noi={numberOfItems}
+            noic={numberOfItemsChecked}
+          ></ListItemsLifeBar>
           <h2>
             {numberOfItemsChecked} / {numberOfItems}
           </h2>

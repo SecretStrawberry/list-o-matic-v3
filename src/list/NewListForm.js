@@ -25,7 +25,7 @@ const NewListForm = ({ lists, onCreatePressed }) => {
             (list) => list.listName === inputValue
           );
 
-          if (!isDuplicate) {
+          if (!isDuplicate && inputValue !== "") {
             onCreatePressed(inputValue);
             setInputValue("");
           }
