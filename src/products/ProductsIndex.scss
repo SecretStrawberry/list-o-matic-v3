@@ -2,13 +2,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Istok+Web:wght@400;700&display=swap");
 
 .products-index {
+  position: relative;
   width: 90%;
   min-height: 30vh;
   margin: 0 auto;
   color: $white;
-
-  margin-top: 2rem;
-  box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
 
   animation: moveFromTop;
   animation-duration: 0.3s;
@@ -20,6 +18,16 @@
   }
 
   padding: 1rem 2rem;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 2.5%;
+    width: 95%;
+    height: 1px;
+    background-color: rgba($green, 0.2);
+  }
 }
 
 .products {

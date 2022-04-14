@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 
-import "./ListIndexItem.scss";
 import ProductsIndex from "../products/ProductsIndex";
 
 import { AiFillCloseSquare } from "react-icons/ai";
+import { IoMdArrowDropdown } from "react-icons/io";
+
+import "./ListIndexItem.scss";
+
 import styled from "styled-components";
 
 const ListItemsSummary = styled.div`
@@ -11,9 +14,9 @@ const ListItemsSummary = styled.div`
   justify-content: space-between;
   align-items: center;
   width: 90%;
+  /* border: 1px solid red; */
 `;
 
-//TODO: lifebar
 const ListItemsLifeBar = styled.div`
   position: relative;
   width: 80%;
@@ -32,6 +35,26 @@ const ListItemsLifeBar = styled.div`
   }
 `;
 
+const DropDownArrow = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 4rem;
+
+  box-shadow: inset 0 0 4px #f7f5f2;
+  border-radius: 3px;
+`;
+
+const NameLifeBar = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  width: 90%;
+`;
+
 const ListIndexItem = ({ list, onDeletePressed }) => {
   const [isVisible, setIsVisible] = useState(false);
 
@@ -42,28 +65,33 @@ const ListIndexItem = ({ list, onDeletePressed }) => {
 
   return (
     <div className="container">
-      <div className="list-item-container">
-        <div
-          className="list-title-delete"
-          onClick={() => setIsVisible(!isVisible)}
-        >
-          <h3>{list.listName}</h3>
-          <div
-            className="delete-container"
-            onClick={() => onDeletePressed(list.id)}
-          >
-            <AiFillCloseSquare className="delete-button" />
+      <div
+        className="list-item-container"
+        onClick={() => setIsVisible(!isVisible)}
+      >
+        <DropDownArrow>
+          <IoMdArrowDropdown />
+        </DropDownArrow>
+        <NameLifeBar>
+          <div className="list-title-delete">
+            <h3>{list.listName}</h3>
+            <div
+              className="delete-container"
+              onClick={() => onDeletePressed(list.id)}
+            >
+              <AiFillCloseSquare className="delete-button" />
+            </div>
           </div>
-        </div>
-        <ListItemsSummary>
-          <ListItemsLifeBar
-            noi={numberOfItems}
-            noic={numberOfItemsChecked}
-          ></ListItemsLifeBar>
-          <h2>
-            {numberOfItemsChecked} / {numberOfItems}
-          </h2>
-        </ListItemsSummary>
+          <ListItemsSummary>
+            <ListItemsLifeBar
+              noi={numberOfItems}
+              noic={numberOfItemsChecked}
+            ></ListItemsLifeBar>
+            <h2>
+              {numberOfItemsChecked} / {numberOfItems}
+            </h2>
+          </ListItemsSummary>
+        </NameLifeBar>
       </div>
 
       {isVisible && <ProductsIndex products={list} />}
